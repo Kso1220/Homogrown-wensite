@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomoGrown Flowers | Sustainable Backyard Farm</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Added 'Rye' for the vintage logo font feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-bg: #FAF9F6;
@@ -27,14 +28,14 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
+        h2, h3 {
+            font-family: 'Rye', serif;
             font-weight: 400;
         }
 
         /* --- NAVIGATION --- */
         nav {
-            padding: 2rem 5%;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -45,12 +46,10 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--accent-green);
-            text-decoration: none;
-            letter-spacing: 1px;
+        .nav-logo-img {
+            height: 75px; /* Adjust this value to make your logo bigger/smaller */
+            width: auto;
+            object-fit: contain;
         }
 
         .nav-links a {
@@ -60,6 +59,7 @@
             text-transform: uppercase;
             font-size: 0.85rem;
             letter-spacing: 1px;
+            font-weight: 700;
             transition: color 0.3s;
         }
 
@@ -69,8 +69,8 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(44, 53, 34, 0.4), rgba(44, 53, 34, 0.4)), url('https://images.unsplash.com/photo-1563241527-3004b7be0ffd?q=80&w=2000&auto=format&fit=crop') center/cover;
+            height: 85vh;
+            background: linear-gradient(rgba(44, 53, 34, 0.45), rgba(44, 53, 34, 0.45)), url('https://images.unsplash.com/photo-1563241527-3004b7be0ffd?q=80&w=2000&auto=format&fit=crop') center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -81,16 +81,20 @@
         }
 
         .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
+            font-family: 'Rye', serif;
+            font-size: 5.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            font-weight: 300;
-            letter-spacing: 1px;
+        .hero-sub {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
         }
 
         /* --- OUR STORY SECTION --- */
@@ -108,6 +112,7 @@
             font-size: 2.8rem;
             color: var(--accent-green);
             margin-bottom: 1.5rem;
+            letter-spacing: 1px;
         }
 
         .story-content p {
@@ -135,6 +140,7 @@
             font-size: 2.8rem;
             margin-bottom: 1rem;
             color: var(--accent-green);
+            letter-spacing: 1px;
         }
 
         .offerings > p {
@@ -165,9 +171,67 @@
         }
 
         .card h3 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--accent-clay);
+        }
+
+        /* --- INSTAGRAM FEED SECTION --- */
+        .instagram-section {
+            background: var(--primary-bg);
+            padding-top: 5rem;
+        }
+
+        .insta-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .insta-header h2 {
+            font-size: 2.5rem;
+            color: var(--accent-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .insta-link {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-clay);
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .insta-link:hover {
+            color: #a86550;
+        }
+
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            width: 100%;
+        }
+
+        .insta-grid a {
+            display: block;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .insta-grid img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+
+        .insta-grid a:hover img {
+            transform: scale(1.05);
+            opacity: 0.8;
         }
 
         /* --- FOOTER --- */
@@ -175,34 +239,10 @@
             background-color: var(--text-main);
             color: white;
             text-align: center;
-            padding: 4rem 5%;
-        }
-
-        footer h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.8rem 2rem;
-            background-color: var(--accent-clay);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #a86550;
+            padding: 3rem 5%;
         }
 
         .est {
-            margin-top: 3rem;
             font-size: 0.85rem;
             opacity: 0.7;
             text-transform: uppercase;
@@ -210,16 +250,32 @@
         }
 
         /* --- MOBILE RESPONSIVENESS --- */
+        @media(max-width: 900px) {
+            .insta-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .insta-grid a:nth-child(4), .insta-grid a:nth-child(5) {
+                display: none;
+            }
+        }
         @media(max-width: 768px) {
             .story-section {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
             .hero h1 {
-                font-size: 3rem;
+                font-size: 3.5rem;
             }
             .nav-links {
-                display: none; /* Can add a hamburger menu later */
+                display: none;
+            }
+        }
+        @media(max-width: 600px) {
+            .insta-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .insta-grid a:nth-child(4) {
+                display: block;
             }
         }
     </style>
@@ -228,7 +284,9 @@
 
     <!-- NAVIGATION -->
     <nav>
-        <a href="#" class="logo">HomoGrown</a>
+        <a href="#">
+            <img src="High-res-01.jpg" alt="HomoGrown Logo" class="nav-logo-img">
+        </a>
         <div class="nav-links">
             <a href="#story">Our Story</a>
             <a href="#offerings">Offerings</a>
@@ -239,20 +297,20 @@
     <!-- HERO SECTION -->
     <header class="hero">
         <h1>HomoGrown</h1>
-        <p>A small-scale, sustainable floral farm growing beautiful, heartfelt blooms in South Jersey.</p>
+        <h3 class="hero-sub">Established 2026</h3>
     </header>
 
     <!-- OUR STORY -->
     <section id="story" class="story-section">
         <div class="story-content">
             <h2>Rooted in Passion</h2>
-            <p>Hi, we’re Richie and Kevin. What started as a labor of love in our Stratford backyard has blossomed into HomoGrown. We are a small-scale farm dedicated to cultivating specialty cut flowers, nurturing native plants, and promoting a culture of re-wilding.</p>
+            <p>Hi, we’re Richie and Kevin. What started as a labor of love in our backyard has blossomed into HomoGrown. We are a small-scale farm dedicated to cultivating specialty cut flowers, nurturing native plants, and promoting a culture of re-wilding.</p>
             
             <p>We believe deeply in sustainable growing practices. From amending our soil naturally in our greenhouse to carefully cultivating our beloved dahlias and native swamp milkweed, every seed we sow is grown with intention and care.</p>
             
             <p>We recently had our very first sale at the Barrington Harvest Festival, and we were absolutely blown away by the community's support. Thank you to everyone who stopped by! We are currently working hard behind the scenes to expand our garden and prepare for our next growing season.</p>
         </div>
-        <img src="https://images.unsplash.com/photo-1460532814880-86c28c831562?q=80&w=1000&auto=format&fit=crop" alt="Richie and Kevin working in the flower garden" class="story-image">
+        <img src="https://images.unsplash.com/photo-1460532814880-86c28c831562?q=80&w=1000&auto=format&fit=crop" alt="Working in the flower garden" class="story-image">
     </section>
 
     <!-- OFFERINGS / PLACEHOLDER -->
@@ -276,14 +334,37 @@
         </div>
     </section>
 
-    <!-- FOOTER / CONTACT -->
-    <footer id="contact">
-        <h3>Follow Our Journey</h3>
-        <p>Watch our garden grow and stay updated on our upcoming marketplace launch.</p>
-        <a href="https://www.instagram.com/homogrownflowers/" target="_blank" class="btn">Visit our Instagram</a>
+    <!-- INSTAGRAM FEED -->
+    <section class="instagram-section" id="contact">
+        <div class="insta-header">
+            <h2>Follow Our Journey</h2>
+            <a href="https://www.instagram.com/homogrownflowers/" target="_blank" class="insta-link">@homogrownflowers</a>
+        </div>
         
+        <div class="insta-grid">
+            <!-- These are high-res botanical placeholders linking directly to your IG -->
+            <a href="https://www.instagram.com/homogrownflowers/" target="_blank">
+                <img src="https://images.unsplash.com/photo-1582791695759-3a362b7194f1?q=80&w=600&auto=format&fit=crop" alt="Dahlias from the garden">
+            </a>
+            <a href="https://www.instagram.com/homogrownflowers/" target="_blank">
+                <img src="https://images.unsplash.com/photo-1508759071477-9a84a60d0999?q=80&w=600&auto=format&fit=crop" alt="Fresh cut flowers">
+            </a>
+            <a href="https://www.instagram.com/homogrownflowers/" target="_blank">
+                <img src="https://images.unsplash.com/photo-1597848030273-030b77b102ce?q=80&w=600&auto=format&fit=crop" alt="Seed harvesting">
+            </a>
+            <a href="https://www.instagram.com/homogrownflowers/" target="_blank">
+                <img src="https://images.unsplash.com/photo-1554477382-727cff8d69f3?q=80&w=600&auto=format&fit=crop" alt="Backyard greenhouse">
+            </a>
+            <a href="https://www.instagram.com/homogrownflowers/" target="_blank">
+                <img src="https://images.unsplash.com/photo-1605335135706-03e911eb9cc5?q=80&w=600&auto=format&fit=crop" alt="Native plants">
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
         <div class="est">
-            &copy; 2026 HomoGrown Flowers | Established 2026
+            &copy; 2026 HomoGrown Flowers
         </div>
     </footer>
 
