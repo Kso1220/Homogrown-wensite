@@ -126,10 +126,14 @@
 
         .story-image {
             width: 100%;
-            height: 500px;
+            max-width: 550px; /* Increased from 420px to make it wider on the screen */
+            aspect-ratio: 4 / 5; /* Changed from 3/4 to make the box shape slightly less tall */
+            height: auto;
             object-fit: cover;
+            object-position: center 20%;
             border-radius: 12px;
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            justify-self: center;
         }
 
         /* --- FUTURE OFFERINGS --- */
