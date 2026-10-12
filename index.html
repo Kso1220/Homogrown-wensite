@@ -48,9 +48,10 @@
         }
 
         .nav-logo-img {
-            height: 75px; /* Adjust this value to make your logo bigger/smaller */
+            height: 75px;
             width: auto;
             object-fit: contain;
+            mix-blend-mode: multiply; /* Knocks out the white JPG background */
         }
 
         .nav-links a {
@@ -252,32 +253,31 @@
         }
 
         /* --- MOBILE RESPONSIVENESS --- */
-        @media(max-width: 900px) {
-            .insta-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .insta-grid a:nth-child(4), .insta-grid a:nth-child(5) {
-                display: none;
-            }
-        }
         @media(max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 0.75rem;
+                padding: 1rem 5%;
+            }
+            .nav-logo-img {
+                height: 60px;
+            }
+            .nav-links {
+                display: flex;
+                gap: 1.5rem;
+                justify-content: center;
+            }
+            .nav-links a {
+                margin-left: 0;
+                font-size: 0.8rem;
+                letter-spacing: 1.5px;
+            }
             .story-section {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
             .hero h1 {
-                font-size: 3.5rem;
-            }
-            .nav-links {
-                display: none;
-            }
-        }
-        @media(max-width: 600px) {
-            .insta-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .insta-grid a:nth-child(4) {
-                display: block;
+                font-size: 3.2rem;
             }
         }
     </style>
